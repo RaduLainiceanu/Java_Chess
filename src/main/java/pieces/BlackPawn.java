@@ -13,3 +13,7 @@ public class BlackPawn implements BlackPiece{
         return false;
     }
 }
+
+
+
+// proba git bogdan
