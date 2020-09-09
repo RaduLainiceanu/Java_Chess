@@ -1,10 +1,16 @@
 package pieces;
 
-public interface Piece {
-    int[] move(int x, int y);
+public abstract class Piece {
+    int[] move(int x, int y){
+        return null;
+    };
 
-    boolean setWhite(boolean isWhite);
-    boolean setBlack(boolean isBlack);
+    boolean setWhite(boolean isWhite){
+        return true;
+    };
+    boolean setBlack(boolean isBlack){
+        return true;
+    };
 
     //UN COMENTARIU DE TEST
 
