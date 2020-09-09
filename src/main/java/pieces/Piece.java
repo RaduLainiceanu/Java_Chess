@@ -3,14 +3,14 @@ package pieces;
 public abstract class Piece {
     int[] move(int x, int y){
         return null;
-    };
+    }
 
     boolean setWhite(boolean isWhite){
         return true;
-    };
+    }
     boolean setBlack(boolean isBlack){
         return true;
-    };
+    }
 
     //UN COMENTARIU DE TEST
 
