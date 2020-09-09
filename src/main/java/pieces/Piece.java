@@ -6,6 +6,8 @@ public interface Piece {
     boolean setWhite(boolean isWhite);
     boolean setBlack(boolean isBlack);
 
+    //UN COMENTARIU DE TEST
+
     /*
     public abstract class Piece {
 
