@@ -1,29 +1,14 @@
 package pieces;
 
 public abstract class Piece {
-    int[] move(int x, int y){
-        return null;
-    }
+   private boolean killed = false;
+   private boolean white = false;
+   private int number;
 
-    boolean setWhite(boolean isWhite){
-        return true;
-    }
-    boolean setBlack(boolean isBlack){
-        return true;
-    }
-
-    //UN COMENTARIU DE TEST
-
-    /*
-    public abstract class Piece {
-
-    private boolean killed = false;
-    private boolean white = false;
-
-    public Piece(boolean white)
-    {
+    public Piece(boolean white) {
         this.setWhite(white);
     }
+
 
     public boolean isWhite()
     {
@@ -45,8 +30,7 @@ public abstract class Piece {
         this.killed = killed;
     }
 
-    public abstract boolean canMove(Board board,
-                                 Spot start, Spot end);
+    public abstract boolean canMove();
 }
-    * */
+
 }
