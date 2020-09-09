@@ -4,6 +4,7 @@ public interface Piece {
     int[] move(int x, int y);
 
     boolean setWhite(boolean isWhite);
+    boolean setBlack(boolean isBlack);
 
     /*
     public abstract class Piece {
