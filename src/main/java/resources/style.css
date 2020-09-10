@@ -31,6 +31,7 @@
 }
 
 #borderGrid{
--fx-border-style: solid;
+-fx-border-style: inset;
+-fx-border-style: outset;
 
 }
