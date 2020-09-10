@@ -11,11 +11,16 @@ import javafx.stage.Stage;
 
 public class Layout extends Application {
 
+    final double initialSceneWidth = 1190;
+    final double initialSceneHeight = 920;
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("CHESS");
         primaryStage.getIcons().add(new Image("stage_icon.png"));
+        primaryStage.setResizable(false);
         AnchorPane anchorPane = new AnchorPane();
+        anchorPane.setId("anchorPane");
+        anchorPane.getStylesheets().add("style.css");
 
         Button singlePlayer = new Button();
         singlePlayer.setPrefSize(190, 190);
@@ -37,7 +42,7 @@ public class Layout extends Application {
         vBox.getChildren().addAll(singlePlayer, multiPlayer, options);
 
         anchorPane.getChildren().addAll(vBox);
-        Scene scene = new Scene(anchorPane, 800, 600);
+        Scene scene = new Scene(anchorPane, initialSceneWidth, initialSceneHeight);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
