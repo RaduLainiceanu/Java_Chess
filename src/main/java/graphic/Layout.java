@@ -13,6 +13,7 @@ public class Layout extends Application {
 
     final double initialSceneWidth = 1190;
     final double initialSceneHeight = 800;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("CHESS");
@@ -38,13 +39,31 @@ public class Layout extends Application {
         options.getStylesheets().add("style.css");
 
         Button play = new Button();
-        play.setPrefSize(190,190);
+        play.setPrefSize(190, 190);
         play.setId("play");
         play.getStylesheets().add("style.css");
 
         VBox vBox = new VBox(5);
-        vBox.setPadding(new Insets(5,0,5,5));
-        vBox.getChildren().addAll(singlePlayer, multiPlayer, options, play);
+        vBox.setPadding(new Insets(5, 0, 5, 5));
+        vBox.getChildren().addAll(singlePlayer, multiPlayer, options);
+
+        singlePlayer.setOnAction(event -> {
+            if (!vBox.getChildren().contains(play)) {
+                vBox.getChildren().add(play);
+            }
+        });
+
+        multiPlayer.setOnAction(event -> {
+            if (!vBox.getChildren().contains(play)) {
+                vBox.getChildren().add(play);
+            }
+        });
+
+        options.setOnAction(event -> {
+            if (vBox.getChildren().contains(play)) {
+                vBox.getChildren().remove(play);
+            }
+        });
 
         anchorPane.getChildren().addAll(vBox);
         Scene scene = new Scene(anchorPane, initialSceneWidth, initialSceneHeight);
