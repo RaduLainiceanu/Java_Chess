@@ -30,8 +30,7 @@
 
 }
 
-#borderGrid{
--fx-border-style: inset;
--fx-border-style: outset;
+#pane{
+-fx-border-style: solid;
 
 }
