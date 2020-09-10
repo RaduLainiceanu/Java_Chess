@@ -37,9 +37,14 @@ public class Layout extends Application {
         options.setId("options");
         options.getStylesheets().add("style.css");
 
+        Button play = new Button();
+        play.setPrefSize(190,190);
+        play.setId("play");
+        play.getStylesheets().add("style.css");
+
         VBox vBox = new VBox(5);
         vBox.setPadding(new Insets(5,0,5,5));
-        vBox.getChildren().addAll(singlePlayer, multiPlayer, options);
+        vBox.getChildren().addAll(singlePlayer, multiPlayer, options, play);
 
         anchorPane.getChildren().addAll(vBox);
         Scene scene = new Scene(anchorPane, initialSceneWidth, initialSceneHeight);
