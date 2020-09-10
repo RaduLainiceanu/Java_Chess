@@ -9,10 +9,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Layout extends Application {
+public class MainLayout extends Application {
 
-    final double initialSceneWidth = 1190;
-    final double initialSceneHeight = 800;
+    public static final double initialSceneWidth = 1190;
+    public static final double initialSceneHeight = 800;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -63,6 +63,14 @@ public class Layout extends Application {
             if (vBox.getChildren().contains(play)) {
                 vBox.getChildren().remove(play);
             }
+        });
+
+        play.setOnAction(event -> {
+            GameLayout gameLayout = new GameLayout();
+
+            primaryStage.setScene(gameLayout.gameStage());
+            primaryStage.show();
+
         });
 
         anchorPane.getChildren().addAll(vBox);
