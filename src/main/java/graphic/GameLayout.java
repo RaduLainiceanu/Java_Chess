@@ -1,8 +1,10 @@
 package graphic;
 
 
+import javafx.geometry.Insets;
 import javafx.scene.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
@@ -13,7 +15,9 @@ public class GameLayout extends MainLayout {
 
     protected Scene gameStage() {
 
-        Pane paneGrid = new Pane();
+        GridPane paneGrid = new GridPane();
+        System.out.println("test");
+
         boolean trigger = false;
         
         for (int i = 0; i < 8; i++){
@@ -33,6 +37,7 @@ public class GameLayout extends MainLayout {
 
 
         Scene scene = new Scene(paneGrid, MainLayout.initialSceneWidth, MainLayout.initialSceneHeight);
+
 
         return scene;
     }

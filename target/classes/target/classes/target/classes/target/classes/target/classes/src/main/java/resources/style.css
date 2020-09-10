@@ -26,6 +26,8 @@
 #play{
 -fx-background-image: url('play.png');
  -fx-background-repeat: no-repeat;
-  -fx-background-position: center
+  -fx-background-position: center;
+
+  
 }
 
