@@ -16,7 +16,7 @@ public class GameLayout extends MainLayout {
     protected Scene gameStage() {
 
         GridPane paneGrid = new GridPane();
-        System.out.println("test");
+
 
         boolean trigger = false;
         
