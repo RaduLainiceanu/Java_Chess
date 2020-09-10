@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class Layout extends Application {
 
     final double initialSceneWidth = 1190;
-    final double initialSceneHeight = 920;
+    final double initialSceneHeight = 800;
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("CHESS");
