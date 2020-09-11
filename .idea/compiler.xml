@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Chess" />
-        <module name="Java_Chess" />
+        <module name="chessGame" />
         <module name="chess" />
+        <module name="Java_Chess" />
       </profile>
     </annotationProcessing>
   </component>
