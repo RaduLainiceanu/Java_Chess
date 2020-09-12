@@ -11,10 +11,10 @@ public class Tower extends Piece {
     public Tower(boolean white, int x, int y, GameLayout.Tile tile) {
         super(white, x, y, tile);
         if(white){
-            Image pieceImg = new Image("white_tower.png");
+            Image pieceImg = new Image("white_rook.png");
             tile.getChildren().add(new ImageView(pieceImg));
         }else{
-            Image pieceImg = new Image("black_tower.png");
+            Image pieceImg = new Image("black_rook.png");
             tile.getChildren().add(new ImageView(pieceImg));
         }
     }
