@@ -10,12 +10,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.image.Image ;
 import pieces.Pawn;
+import repository.Piece;
+import repository.PieceController;
+
+import java.util.ArrayList;
 
 public class GameLayout extends MainLayout {
 
-    protected Scene gameStage() {
+    GridPane gridPane = new GridPane();
 
-        GridPane gridPane = new GridPane();
+    protected Scene gameStage() {
         final int size = 8;
         double tileWidth = MainLayout.initialSceneWidth / size;
         double tileHeight = MainLayout.initialSceneHeight / size;
@@ -28,17 +32,14 @@ public class GameLayout extends MainLayout {
                 if ((row + col) % 2 == 0) {
                     color = "white";
                 } else {
-                    color = "black";
+                    color = "gray";
                 }
                 Tile tile = new Tile(row, col);
                 tile.setPrefSize(tileWidth, tileHeight);
                 tile.setStyle("-fx-background-color: " + color + ";");
                 gridPane.add(tile, col, row);
-                if(row == 1 && col == 1){
-                    Pawn blackPawn1 = new Pawn(false, row, col);
-                    Image pieceImg = new Image("black_pawn.png");
-                    tile.getChildren().add(new ImageView(pieceImg));
-                }
+
+                PieceController.addPart(row, col, tile);
             }
         }
         for (int i = 0; i < size; i++) {
@@ -67,7 +68,7 @@ public class GameLayout extends MainLayout {
         return scene;
     }
 
-    class Tile extends Pane {
+    public class Tile extends Pane {
         private int posX;
         private int posY;
 
@@ -76,12 +77,9 @@ public class GameLayout extends MainLayout {
             posY = y;
             setOnMouseClicked(e -> {
                 System.out.println(posX + " " + posY);
-                //COMENTARIU TEST GABI
             });
         }
     }
-
-    //Adaugare Radu piesa pion pe tabla
 
 
 }
