@@ -74,4 +74,7 @@ public class GameLayout extends MainLayout {
         }
     }
 
+    //Adaugare Radu piesa pion pe tabla
+
+
 }
