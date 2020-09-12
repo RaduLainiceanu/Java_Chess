@@ -84,7 +84,9 @@ public class GameLayout extends MainLayout {
                 System.out.print(posX + " " + posY + " ");
                 try{
                     piece.sayType();
-                }catch(Exception ignored){ }
+                }catch(Exception ignored){
+                    System.out.println(" ");
+                }
             });
         }
     }
