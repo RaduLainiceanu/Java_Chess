@@ -13,9 +13,11 @@ public class Queen extends Piece {
         if(white){
             Image pieceImg = new Image("white_queen.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "White Queen";
         }else{
             Image pieceImg = new Image("black_queen.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "Black Queen";
         }
     }
 

@@ -13,9 +13,11 @@ public class Tower extends Piece {
         if(white){
             Image pieceImg = new Image("white_rook.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "White Tower";
         }else{
             Image pieceImg = new Image("black_rook.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "Black Tower";
         }
     }
 

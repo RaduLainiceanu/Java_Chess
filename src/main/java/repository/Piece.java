@@ -10,11 +10,15 @@ public abstract class Piece {
     private boolean killed = false;
     private boolean white = false;
     private int[] coord  = new int[]{0, 0};
-
+    protected String pieceName = "generic piece";
 
     public Piece(boolean white, int x, int y, GameLayout.Tile tile) {
         this.setCoord(x, y);
         this.white = white;
+    }
+
+    public void sayType(){
+        System.out.println(this.pieceName);
     }
 
     public boolean isWhite() {

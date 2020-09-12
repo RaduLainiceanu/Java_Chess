@@ -13,9 +13,11 @@ public class Bishop extends Piece {
         if(white){
             Image pieceImg = new Image("white_bishop.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "White Bishop";
         }else{
             Image pieceImg = new Image("black_bishop.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "Black Bishop";
         }
     }
 

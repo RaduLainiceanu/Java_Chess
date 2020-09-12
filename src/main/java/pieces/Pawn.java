@@ -8,14 +8,17 @@ import repository.Piece;
 import repository.Spot;
 
 public class Pawn extends Piece {
+
     public Pawn(boolean white, int x, int y, GameLayout.Tile tile) {
         super(white, x, y, tile);
         if(white){
             Image pieceImg = new Image("white_pawn.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "White Pawn";
         }else{
             Image pieceImg = new Image("black_pawn.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "Black Pawn";
         }
     }
 

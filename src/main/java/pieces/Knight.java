@@ -13,9 +13,11 @@ public class Knight extends Piece {
         if(white){
             Image pieceImg = new Image("white_knight.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "White Knight";
         }else{
             Image pieceImg = new Image("black_knight.png");
             tile.getChildren().add(new ImageView(pieceImg));
+            pieceName = "Black Knight";
         }
     }
 
