@@ -69,6 +69,7 @@ public class GameLayout extends MainLayout {
             posY = y;
             setOnMouseClicked(e -> {
                 System.out.println(posX + " " + posY);
+                //COMENTARIU TEST GABI
             });
         }
     }
