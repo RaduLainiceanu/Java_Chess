@@ -6,7 +6,10 @@ import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Control;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.image.Image ;
+import pieces.Pawn;
 
 public class GameLayout extends MainLayout {
 
@@ -31,7 +34,11 @@ public class GameLayout extends MainLayout {
                 tile.setPrefSize(tileWidth, tileHeight);
                 tile.setStyle("-fx-background-color: " + color + ";");
                 gridPane.add(tile, col, row);
-
+                if(row == 1 && col == 1){
+                    Pawn blackPawn1 = new Pawn(false, row, col);
+                    Image pieceImg = new Image("black_pawn.png");
+                    tile.getChildren().add(new ImageView(pieceImg));
+                }
             }
         }
         for (int i = 0; i < size; i++) {

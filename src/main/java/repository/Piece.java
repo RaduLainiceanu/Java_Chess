@@ -8,7 +8,8 @@ public abstract class Piece {
     private int[] coord  = new int[]{0, 0};
 
 
-    public Piece(boolean white) {
+    public Piece(boolean white, int x, int y) {
+        this.setCoord(x, y);
         this.white = white;
     }
 

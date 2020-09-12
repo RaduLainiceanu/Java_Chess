@@ -5,8 +5,8 @@ import repository.Piece;
 import repository.Spot;
 
 public class Tower extends Piece {
-    public Tower(boolean white) {
-        super(white);
+    public Tower(boolean white, int x, int y) {
+        super(white, x, y);
     }
 
     @Override

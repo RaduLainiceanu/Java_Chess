@@ -5,8 +5,8 @@ import repository.Piece;
 import repository.Spot;
 
 public class Knight extends Piece {
-    public Knight(boolean white) {
-        super(white);
+    public Knight(boolean white, int x, int y) {
+        super(white, x, y);
     }
 
     @Override
