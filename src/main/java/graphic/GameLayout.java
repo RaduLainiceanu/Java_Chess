@@ -21,29 +21,25 @@ public class GameLayout extends MainLayout {
     static GridPane gridPane = new GridPane();
     static private boolean isSelected = false;
     static private Piece selectedPiece;
+    public static boolean isIsSelected() {
+        return isSelected;
+    }
+    public static void setIsSelected(boolean isSelected) {
+        GameLayout.isSelected = isSelected;
+    }
+    public static Piece getSelectedPiece() {
+        return selectedPiece;
+    }
+    public static void setSelectedPiece(Piece selectedPiece) {
+        GameLayout.selectedPiece = selectedPiece;
+    }
+
 
     public static GridPane getGridPane() {
         return gridPane;
     }
-
     public static void setGridPane(GridPane gridPane) {
         GameLayout.gridPane = gridPane;
-    }
-
-    public static boolean isIsSelected() {
-        return isSelected;
-    }
-
-    public static void setIsSelected(boolean isSelected) {
-        GameLayout.isSelected = isSelected;
-    }
-
-    public static Piece getSelectedPiece() {
-        return selectedPiece;
-    }
-
-    public static void setSelectedPiece(Piece selectedPiece) {
-        GameLayout.selectedPiece = selectedPiece;
     }
 
     protected Scene gameStage() {
