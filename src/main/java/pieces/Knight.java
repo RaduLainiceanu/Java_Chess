@@ -1,11 +1,8 @@
 package pieces;
 
-import graphic.GameLayout;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import repository.Board;
 import repository.Piece;
-import repository.Spot;
 import repository.Tile;
 
 public class Knight extends Piece {

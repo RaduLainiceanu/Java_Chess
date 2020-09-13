@@ -15,6 +15,16 @@ public class Tile extends Pane {
         posX = x;
         posY = y;
         setOnMouseClicked(e -> {
+
+
+
+
+
+
+
+
+
+
             System.out.print(posX + " " + posY + " ");
             try{
                 piece.sayType();

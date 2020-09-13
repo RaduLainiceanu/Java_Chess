@@ -9,14 +9,10 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import pieces.Bishop;
-import repository.Piece;
-import repository.PieceController;
-import repository.Spot;
+import repository.Board;
 import repository.Tile;
 
 public class GameLayout extends MainLayout {
@@ -43,7 +39,7 @@ public class GameLayout extends MainLayout {
                 tile.setStyle("-fx-background-color: " + color + ";");
                 gridPane.add(tile, col, row);
 
-                PieceController.addPart(row, col, tile);
+                Board.addPart(row, col, tile);
             }
         }
         for (int i = 0; i < size; i++) {
