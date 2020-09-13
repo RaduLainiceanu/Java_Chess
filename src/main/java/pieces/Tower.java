@@ -9,11 +9,13 @@ public class Tower extends Piece {
     public Tower(boolean white, int x, int y, Tile tile) {
         super(white, x, y, tile);
         if(white){
-            Image pieceImg = new Image("white_rook.png");
+            setImgUrl("white_rook.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "White Tower";
         }else{
-            Image pieceImg = new Image("black_rook.png");
+            setImgUrl("black_rook.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "Black Tower";
         }

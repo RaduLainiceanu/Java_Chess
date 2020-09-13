@@ -9,11 +9,13 @@ public class King extends Piece {
     public King(boolean white, int x, int y, Tile tile) {
         super(white, x, y, tile);
         if(white){
-            Image pieceImg = new Image("white_king.png");
+            setImgUrl("white_king.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "White King";
         }else{
-            Image pieceImg = new Image("black_king.png");
+            setImgUrl("black_king.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "Black King";
         }

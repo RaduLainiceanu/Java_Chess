@@ -9,11 +9,13 @@ public class Knight extends Piece {
     public Knight(boolean white, int x, int y, Tile tile) {
         super(white, x, y, tile);
         if(white){
-            Image pieceImg = new Image("white_knight.png");
+            setImgUrl("white_knight.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "White Knight";
         }else{
-            Image pieceImg = new Image("black_knight.png");
+            setImgUrl("black_knight.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "Black Knight";
         }

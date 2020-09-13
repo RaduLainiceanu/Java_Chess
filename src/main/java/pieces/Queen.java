@@ -9,11 +9,13 @@ public class Queen extends Piece {
     public Queen(boolean white, int x, int y, Tile tile) {
         super(white, x, y, tile);
         if(white){
-            Image pieceImg = new Image("white_queen.png");
+            setImgUrl("white_queen.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "White Queen";
         }else{
-            Image pieceImg = new Image("black_queen.png");
+            setImgUrl("black_queen.png");
+            Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
             pieceName = "Black Queen";
         }
