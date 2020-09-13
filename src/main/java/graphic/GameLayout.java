@@ -1,19 +1,22 @@
 package graphic;
 
+import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Control;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.image.Image ;
-import pieces.Pawn;
+import javafx.stage.Stage;
+import pieces.Bishop;
 import repository.Piece;
 import repository.PieceController;
-
-import java.util.ArrayList;
+import repository.Spot;
 
 public class GameLayout extends MainLayout {
 
@@ -54,14 +57,57 @@ public class GameLayout extends MainLayout {
 
         BorderPane borderPane = new BorderPane();
 
-        HBox hBoxTop = new HBox();
-        hBoxTop.setMinHeight(50);
+        Button newGame = new Button();
+        newGame.setGraphic(new ImageView("new_game.png"));
+        Tooltip.install(newGame, new Tooltip("New game"));
+        newGame.setOnAction(event -> {
+            GameLayout gameLayout = new GameLayout();
+            try {
+                gameLayout.gameStage();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        Button back = new Button();
+        back.setGraphic(new ImageView("go_back.png"));
+        Tooltip.install(back, new Tooltip("Go to menu"));
+        back.setOnAction(event -> {
+            MainLayout mainLayout = new MainLayout();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            try {
+                mainLayout.start(stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        Button close = new Button();
+        close.setGraphic(new ImageView("exit.png"));
+        Tooltip.install(close, new Tooltip("Close"));
+        close.setOnAction(event -> {
+            Platform.exit();
+        });
 
+        HBox hBoxTop = new HBox(5);
+        hBoxTop.getChildren().addAll(newGame, back, close);
+        hBoxTop.setPadding(new Insets(0,0,10,0));
+
+        VBox vBoxLeft = new VBox();
+        vBoxLeft.setPadding(new Insets(0,0,0,265));
+        VBox vBoxRight = new VBox();
+        vBoxRight.setPadding(new Insets(0,235,0,0));
+        HBox hBoxBottom = new HBox();
+        hBoxBottom.setPadding(new Insets(0,0,50,0));
         borderPane.setTop(hBoxTop);
+        borderPane.setLeft(vBoxLeft);
+        borderPane.setRight(vBoxRight);
+        borderPane.setBottom(hBoxBottom);
+        BorderPane.setAlignment(hBoxTop, Pos.TOP_LEFT);
+
+
 
         borderPane.setCenter(gridPane);
 
-        borderPane.setPadding(new Insets(0, 250, 50, 250));
+        borderPane.setPadding(new Insets(0, 0, 0, 0));
 
         Scene scene = new Scene(borderPane, MainLayout.initialSceneWidth, MainLayout.initialSceneHeight);
 
