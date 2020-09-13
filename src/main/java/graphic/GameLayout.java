@@ -17,6 +17,7 @@ import pieces.Bishop;
 import repository.Piece;
 import repository.PieceController;
 import repository.Spot;
+import repository.Tile;
 
 public class GameLayout extends MainLayout {
 
@@ -129,29 +130,5 @@ public class GameLayout extends MainLayout {
 
         return scene;
     }
-
-    public class Tile extends Pane {
-        private int posX;
-        private int posY;
-        private Piece piece;
-
-        public void setPiece(Piece piece) {
-            this.piece = piece;
-        }
-
-        public Tile(int x, int y) {
-            posX = x;
-            posY = y;
-            setOnMouseClicked(e -> {
-                System.out.print(posX + " " + posY + " ");
-                try{
-                    piece.sayType();
-                }catch(Exception ignored){
-                    System.out.println(" ");
-                }
-            });
-        }
-    }
-
 
 }

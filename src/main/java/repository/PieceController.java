@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class PieceController {
 
-    public static void addPart(int x, int y, GameLayout.Tile tile){
+    public static void addPart(int x, int y, Tile tile){
         if(x==0 && y==0){
             Tower blackTower = new Tower(false, x, y, tile);
             tile.setPiece(blackTower);

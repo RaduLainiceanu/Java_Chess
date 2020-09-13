@@ -6,10 +6,11 @@ import javafx.scene.image.ImageView;
 import repository.Board;
 import repository.Piece;
 import repository.Spot;
+import repository.Tile;
 
 public class Pawn extends Piece {
 
-    public Pawn(boolean white, int x, int y, GameLayout.Tile tile) {
+    public Pawn(boolean white, int x, int y, Tile tile) {
         super(white, x, y, tile);
         if(white){
             Image pieceImg = new Image("white_pawn.png");
