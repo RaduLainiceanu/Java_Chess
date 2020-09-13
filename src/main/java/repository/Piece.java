@@ -1,10 +1,6 @@
 package repository;
 //An abstract class to represent common functionality of all chess pieces:
 
-import graphic.GameLayout;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
 public abstract class Piece {
 
     private boolean killed = false;
@@ -13,7 +9,7 @@ public abstract class Piece {
     protected String pieceName = "generic piece";
 
     public Piece(boolean white, int x, int y, Tile tile) {
-        this.setCoord(x, y);
+        this.setCoordonates(x, y);
         this.white = white;
     }
 
@@ -37,13 +33,11 @@ public abstract class Piece {
         this.killed = killed;
     }
 
-    public abstract boolean canMove(Board board, Spot start, Spot end);
-
     public int[] getCoord() {
         return coord;
     }
 
-    public void setCoord(int x, int y) {
+    public void setCoordonates(int x, int y) {
         this.coord[0] = x;
         this.coord[1] = y;
     }

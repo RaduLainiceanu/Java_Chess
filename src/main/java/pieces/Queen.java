@@ -22,8 +22,5 @@ public class Queen extends Piece {
         }
     }
 
-    @Override
-    public boolean canMove(Board board, Spot start, Spot end) {
-        return false;
-    }
+
 }
