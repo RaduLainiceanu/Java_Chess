@@ -32,13 +32,19 @@ public class Tile extends Pane {
             }
 
             if(!GameLayout.isIsSelected()){
-                GameLayout.setSelectedPiece(this.piece);
-                this.getChildren().clear();
+                if(this.piece!=null){
+                    GameLayout.setSelectedPiece(this.piece);
+                    GameLayout.setIsSelected(true);
+                    this.getChildren().clear();
+                }else{
+                    GameLayout.setSelectedPiece(null);
+                }
             }else{
                 this.setPiece(GameLayout.getSelectedPiece());
                 Image pieceImg = new Image(GameLayout.getSelectedPiece().getImgUrl());
                 this.getChildren().add(new ImageView(pieceImg));
                 GameLayout.setSelectedPiece(null);
+                GameLayout.setIsSelected(false);
             }
         });
     }
