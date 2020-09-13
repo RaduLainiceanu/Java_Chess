@@ -1,5 +1,8 @@
 package repository;
 
+import graphic.GameLayout;
+import javafx.scene.Node;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 public class Tile extends Pane {
@@ -11,11 +14,16 @@ public class Tile extends Pane {
         this.piece = piece;
     }
 
+    public Piece getPiece() {
+        return piece;
+    }
+
     public Tile(int x, int y) {
         posX = x;
         posY = y;
         setOnMouseClicked(e -> {
 
+        //Piece sourcePiece =
 
 
 

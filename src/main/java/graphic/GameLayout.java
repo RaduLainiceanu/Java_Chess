@@ -13,11 +13,38 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import repository.Board;
+import repository.Piece;
 import repository.Tile;
 
 public class GameLayout extends MainLayout {
 
-    GridPane gridPane = new GridPane();
+    static GridPane gridPane = new GridPane();
+    static private boolean isSelected = false;
+    static private Piece selectedPiece;
+
+    public static GridPane getGridPane() {
+        return gridPane;
+    }
+
+    public static void setGridPane(GridPane gridPane) {
+        GameLayout.gridPane = gridPane;
+    }
+
+    public static boolean isIsSelected() {
+        return isSelected;
+    }
+
+    public static void setIsSelected(boolean isSelected) {
+        GameLayout.isSelected = isSelected;
+    }
+
+    public static Piece getSelectedPiece() {
+        return selectedPiece;
+    }
+
+    public static void setSelectedPiece(Piece selectedPiece) {
+        GameLayout.selectedPiece = selectedPiece;
+    }
 
     protected Scene gameStage() {
         final int size = 8;
