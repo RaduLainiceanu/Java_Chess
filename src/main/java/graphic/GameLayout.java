@@ -57,10 +57,10 @@ public class GameLayout extends MainLayout {
 
         BorderPane borderPane = new BorderPane();
 
-        Button newGame = new Button();
-        newGame.setGraphic(new ImageView("new_game.png"));
-        Tooltip.install(newGame, new Tooltip("New game"));
-        newGame.setOnAction(event -> {
+        Button newGameBtn = new Button();
+        newGameBtn.setGraphic(new ImageView("new_game.png"));
+        Tooltip.install(newGameBtn, new Tooltip("New game"));
+        newGameBtn.setOnAction(event -> {
             GameLayout gameLayout = new GameLayout();
             try {
                 gameLayout.gameStage();
@@ -68,10 +68,11 @@ public class GameLayout extends MainLayout {
                 e.printStackTrace();
             }
         });
-        Button back = new Button();
-        back.setGraphic(new ImageView("go_back.png"));
-        Tooltip.install(back, new Tooltip("Go to menu"));
-        back.setOnAction(event -> {
+
+        Button backBtn = new Button();
+        backBtn.setGraphic(new ImageView("go_back.png"));
+        Tooltip.install(backBtn, new Tooltip("Go to menu"));
+        backBtn.setOnAction(event -> {
             MainLayout mainLayout = new MainLayout();
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             try {
@@ -80,15 +81,30 @@ public class GameLayout extends MainLayout {
                 e.printStackTrace();
             }
         });
-        Button close = new Button();
-        close.setGraphic(new ImageView("exit.png"));
-        Tooltip.install(close, new Tooltip("Close"));
-        close.setOnAction(event -> {
+
+        Button closeBtn = new Button();
+        closeBtn.setGraphic(new ImageView("exit.png"));
+        Tooltip.install(closeBtn, new Tooltip("Close"));
+        closeBtn.setOnAction(event -> {
             Platform.exit();
         });
 
+        Button saveBtn = new Button();
+        saveBtn.setGraphic(new ImageView("save_game.png"));
+        Tooltip.install(saveBtn, new Tooltip("Save current game"));
+        saveBtn.setOnAction(event -> {
+            // save position of each piece on board into a file or database. Save a copy of board
+        });
+
+        Button loadBtn = new Button();
+        loadBtn.setGraphic(new ImageView("load_game.png"));
+        Tooltip.install(loadBtn, new Tooltip("Load last game"));
+        loadBtn.setOnAction(event -> {
+            // load last game status from a file or a database.
+        });
+
         HBox hBoxTop = new HBox(5);
-        hBoxTop.getChildren().addAll(newGame, back, close);
+        hBoxTop.getChildren().addAll(newGameBtn, backBtn, closeBtn, saveBtn, loadBtn);
         hBoxTop.setPadding(new Insets(0,0,10,0));
 
         VBox vBoxLeft = new VBox();
