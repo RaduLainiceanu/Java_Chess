@@ -4,6 +4,11 @@ import controller.GameController;
 import javafx.scene.layout.Pane;
 import model.pieces.Piece;
 
+/*
+*   Aceasta clasa este un element vizual folosit in GameLayout pentru a reprezenta celulele de pe tabla.
+* Ea este folosit ca principalul element al interactiunii utilizatorului cu logica din spate a aplicatiei.
+* La apasarea click asupra unui element Tile, aplicatia face legatura cu metodele din clasa GameController.
+* */
 public class Tile extends Pane {
     private int posX;
     private int posY;

@@ -4,7 +4,7 @@ import model.pieces.*;
 import view.Tile;
 
 /*
-Clasa responsabila pentru stocarea datelor.
+Clasa responsabila pentru stocarea datelor din joc si urmarirea pieselor selectate.
  */
 
 public class GameModel {

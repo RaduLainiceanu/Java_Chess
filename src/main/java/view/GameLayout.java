@@ -14,6 +14,11 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import model.GameModel;
 
+/*
+* Gestioneaza afisajul.
+* Face legatura cu clasa GameController prin apasarea click asupra elementelor de tip Tile din variabila gridPane.
+ */
+
 public class GameLayout extends MainLayout {
 
     static GridPane gridPane = new GridPane();

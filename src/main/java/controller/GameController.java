@@ -7,8 +7,9 @@ import view.Tile;
 import model.pieces.*;
 
 /*
-* Clasa responsabila cu primirea inputului de la utilizator si procesarea acestuia
-* De aici informam modelul privind alegerile utilizatorului
+*   Clasa responsabila cu primirea inputului de la utilizator si procesarea acestuia.
+* De aici actualizam GameModel privind alegerile utilizatorului.
+* Metodele sale sunt actionate de catre GameLayout prin clasa Tile
 * */
 public class GameController {
 
