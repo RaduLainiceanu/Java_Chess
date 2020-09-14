@@ -1,13 +1,12 @@
-package pieces;
+package model.pieces;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import repository.Piece;
-import repository.Tile;
+import model.Tile;
 
 public class Queen extends Piece {
-    public Queen(boolean white, int x, int y, Tile tile) {
-        super(white, x, y, tile);
+    public Queen(boolean white, Tile tile) {
+        super(white, tile);
         if(white){
             setImgUrl("white_queen.png");
             Image pieceImg = new Image(getImgUrl());

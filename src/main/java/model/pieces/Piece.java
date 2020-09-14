@@ -1,13 +1,12 @@
-package repository;
-//An abstract class to represent common functionality of all chess pieces:
+package model.pieces;
+//An abstract class to represent common functionality of all chess model.pieces:
 
-import javafx.scene.image.Image;
+import model.Tile;
 
 public abstract class Piece {
 
     private boolean killed = false;
     private boolean white = false;
-    private int[] coord  = new int[]{0, 0};
     protected String pieceName = "generic piece";
     private String imgUrl = "";
 
@@ -18,8 +17,7 @@ public abstract class Piece {
         this.imgUrl = imgUrl;
     }
 
-    public Piece(boolean white, int x, int y, Tile tile) {
-        this.setCoordonates(x, y);
+    public Piece(boolean white, Tile tile) {
         this.white = white;
     }
 
@@ -41,15 +39,6 @@ public abstract class Piece {
 
     public void setKilled(boolean killed) {
         this.killed = killed;
-    }
-
-    public int[] getCoord() {
-        return coord;
-    }
-
-    public void setCoordonates(int x, int y) {
-        this.coord[0] = x;
-        this.coord[1] = y;
     }
 }
 

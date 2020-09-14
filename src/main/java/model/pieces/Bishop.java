@@ -1,26 +1,24 @@
-package pieces;
+package model.pieces;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import repository.Piece;
-import repository.Tile;
+import model.Tile;
 
-public class Pawn extends Piece {
+public class Bishop extends Piece {
 
-    public Pawn(boolean white, int x, int y, Tile tile) {
-        super(white, x, y, tile);
+    public Bishop(boolean white, Tile tile) {
+        super(white, tile);
         if(white){
-            setImgUrl("white_pawn.png");
+            setImgUrl("white_bishop.png");
             Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
-            pieceName = "White Pawn";
+            pieceName = "White Bishop";
         }else{
-            setImgUrl("black_pawn.png");
+            setImgUrl("black_bishop.png");
             Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
-            pieceName = "Black Pawn";
+            pieceName = "Black Bishop";
         }
     }
-
 
 }

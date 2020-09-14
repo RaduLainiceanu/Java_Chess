@@ -1,4 +1,4 @@
-package graphic;
+package view;
 
 import javafx.application.Platform;
 import javafx.geometry.HPos;
@@ -12,29 +12,13 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import repository.Board;
-import repository.Piece;
-import repository.Tile;
+import controller.GameController;
+import model.GameModel;
+import model.Tile;
 
 public class GameLayout extends MainLayout {
 
     static GridPane gridPane = new GridPane();
-    static private boolean isSelected = false;
-    static private Piece selectedPiece;
-    public static boolean isIsSelected() {
-        return isSelected;
-    }
-    public static void setIsSelected(boolean isSelected) {
-        GameLayout.isSelected = isSelected;
-    }
-    public static Piece getSelectedPiece() {
-        return selectedPiece;
-    }
-    public static void setSelectedPiece(Piece selectedPiece) {
-        GameLayout.selectedPiece = selectedPiece;
-    }
-
-
     public static GridPane getGridPane() {
         return gridPane;
     }
@@ -43,6 +27,19 @@ public class GameLayout extends MainLayout {
     }
 
     protected Scene gameStage() {
+
+        makeTable();
+
+        BorderPane borderPane = new BorderPane();
+
+        makeScene(borderPane);
+
+        Scene scene = new Scene(borderPane, MainLayout.initialSceneWidth, MainLayout.initialSceneHeight);
+
+        return scene;
+    }
+
+    public static void makeTable(){
         final int size = 8;
         double tileWidth = MainLayout.initialSceneWidth / size;
         double tileHeight = MainLayout.initialSceneHeight / size;
@@ -60,23 +57,22 @@ public class GameLayout extends MainLayout {
                 Tile tile = new Tile(row, col);
                 tile.setPrefSize(tileWidth, tileHeight);
                 tile.setStyle("-fx-background-color: " + color + ";");
-                gridPane.add(tile, col, row);
+                GameLayout.getGridPane().add(tile, col, row);
 
-                Board.addPart(row, col, tile);
+                GameModel.addPieces(row, col, tile);
             }
         }
         for (int i = 0; i < size; i++) {
-            gridPane.getColumnConstraints().add(new ColumnConstraints(5, Control.USE_COMPUTED_SIZE, Double.POSITIVE_INFINITY, Priority.ALWAYS, HPos.CENTER, true));
-            gridPane.getRowConstraints().add(new RowConstraints(5, Control.USE_COMPUTED_SIZE, Double.POSITIVE_INFINITY, Priority.ALWAYS, VPos.CENTER, true));
+            GameLayout.getGridPane().getColumnConstraints().add(new ColumnConstraints(5, Control.USE_COMPUTED_SIZE, Double.POSITIVE_INFINITY, Priority.ALWAYS, HPos.CENTER, true));
+            GameLayout.getGridPane().getRowConstraints().add(new RowConstraints(5, Control.USE_COMPUTED_SIZE, Double.POSITIVE_INFINITY, Priority.ALWAYS, VPos.CENTER, true));
         }
 
-        Group group = new Group(gridPane);
+        Group group = new Group(GameLayout.getGridPane());
 
-        gridPane.setId("pane");
-        gridPane.getStylesheets().add("style.css");
-
-        BorderPane borderPane = new BorderPane();
-
+        GameLayout.getGridPane().setId("pane");
+        GameLayout.getGridPane().getStylesheets().add("style.css");
+    }
+    private void makeScene(BorderPane borderPane){
         Button newGameBtn = new Button();
         newGameBtn.setGraphic(new ImageView("new_game.png"));
         Tooltip.install(newGameBtn, new Tooltip("New game"));
@@ -144,10 +140,5 @@ public class GameLayout extends MainLayout {
         borderPane.setCenter(gridPane);
 
         borderPane.setPadding(new Insets(0, 0, 0, 0));
-
-        Scene scene = new Scene(borderPane, MainLayout.initialSceneWidth, MainLayout.initialSceneHeight);
-
-        return scene;
     }
-
 }

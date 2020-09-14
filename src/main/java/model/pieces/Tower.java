@@ -1,27 +1,24 @@
-package pieces;
+package model.pieces;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import repository.Piece;
-import repository.Tile;
+import model.Tile;
 
-public class King extends Piece {
-    public King(boolean white, int x, int y, Tile tile) {
-        super(white, x, y, tile);
+public class Tower extends Piece {
+    public Tower(boolean white,  Tile tile) {
+        super(white, tile);
         if(white){
-            setImgUrl("white_king.png");
+            setImgUrl("white_rook.png");
             Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
-            pieceName = "White King";
+            pieceName = "White Tower";
         }else{
-            setImgUrl("black_king.png");
+            setImgUrl("black_rook.png");
             Image pieceImg = new Image(getImgUrl());
             tile.getChildren().add(new ImageView(pieceImg));
-            pieceName = "Black King";
+            pieceName = "Black Tower";
         }
     }
-
-
 
 
 }
