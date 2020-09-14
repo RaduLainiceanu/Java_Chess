@@ -21,18 +21,12 @@ import model.GameModel;
 
 public class GameLayout extends MainLayout {
 
-
     protected Scene gameStage() {
-
         GameModel.makeTable();
-
         BorderPane borderPane = new BorderPane();
-
         makeScene(borderPane);
-
         return new Scene(borderPane, MainLayout.initialSceneWidth, MainLayout.initialSceneHeight);
     }
-
 
     private void makeScene(BorderPane borderPane){
         Button newGameBtn = new Button();

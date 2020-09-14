@@ -129,9 +129,7 @@ public class GameModel {
     private GameModel(){}
 
     /*
-     *   Aceasta clasa este un element vizual folosit in GameLayout pentru a reprezenta celulele de pe tabla.
-     * Ea este folosit ca principalul element al interactiunii utilizatorului cu logica din spate a aplicatiei.
-     * La apasarea click asupra unui element Tile, aplicatia face legatura cu metodele din clasa GameController.
+     *   Aceasta clasa este folosita pentru a putea stoca cate o piesa in fiecare obiect generat pe tabla.
      * */
     public static class Tile extends Pane {
         private int posX;
