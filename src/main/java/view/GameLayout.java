@@ -21,11 +21,10 @@ import model.GameModel;
 
 public class GameLayout extends MainLayout {
 
-    static GridPane gridPane = new GridPane();
 
     protected Scene gameStage() {
 
-        makeTable();
+        GameModel.makeTable();
 
         BorderPane borderPane = new BorderPane();
 
@@ -34,39 +33,6 @@ public class GameLayout extends MainLayout {
         return new Scene(borderPane, MainLayout.initialSceneWidth, MainLayout.initialSceneHeight);
     }
 
-    public static void makeTable(){
-        final int size = 8;
-        double tileWidth = MainLayout.initialSceneWidth / size;
-        double tileHeight = MainLayout.initialSceneHeight / size;
-
-
-        for (int row = 0; row < size; row++) {
-            for (int col = 0; col < size; col++) {
-                StackPane stackPane = new StackPane();
-                String color;
-                if ((row + col) % 2 == 0) {
-                    color = "white";
-                } else {
-                    color = "gray";
-                }
-                Tile tile = new Tile(row, col);
-                tile.setPrefSize(tileWidth, tileHeight);
-                tile.setStyle("-fx-background-color: " + color + ";");
-                gridPane.add(tile, col, row);
-
-                GameModel.addPieces(row, col, tile);
-            }
-        }
-        for (int i = 0; i < size; i++) {
-            gridPane.getColumnConstraints().add(new ColumnConstraints(5, Control.USE_COMPUTED_SIZE, Double.POSITIVE_INFINITY, Priority.ALWAYS, HPos.CENTER, true));
-            gridPane.getRowConstraints().add(new RowConstraints(5, Control.USE_COMPUTED_SIZE, Double.POSITIVE_INFINITY, Priority.ALWAYS, VPos.CENTER, true));
-        }
-
-        Group group = new Group(gridPane);
-
-        gridPane.setId("pane");
-        gridPane.getStylesheets().add("style.css");
-    }
 
     private void makeScene(BorderPane borderPane){
         Button newGameBtn = new Button();
@@ -131,7 +97,7 @@ public class GameLayout extends MainLayout {
         borderPane.setBottom(hBoxBottom);
         BorderPane.setAlignment(hBoxTop, Pos.TOP_LEFT);
 
-        borderPane.setCenter(gridPane);
+        borderPane.setCenter(GameModel.getGridPane());
 
         borderPane.setPadding(new Insets(0, 0, 0, 0));
     }
