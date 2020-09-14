@@ -1,19 +1,9 @@
 package controller;
 
 import model.GameModel;
-import view.GameLayout;
-import view.MainLayout;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
-import javafx.scene.Group;
-import javafx.scene.control.Control;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.RowConstraints;
-import javafx.scene.layout.StackPane;
-import model.Tile;
+import view.Tile;
 import model.pieces.*;
 
 /*

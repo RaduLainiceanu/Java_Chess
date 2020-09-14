@@ -1,7 +1,7 @@
 package model.pieces;
 //An abstract class to represent common functionality of all chess model.pieces:
 
-import model.Tile;
+import view.Tile;
 
 public abstract class Piece {
 

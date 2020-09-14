@@ -2,7 +2,7 @@ package model.pieces;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import model.Tile;
+import view.Tile;
 
 public class Tower extends Piece {
     public Tower(boolean white,  Tile tile) {

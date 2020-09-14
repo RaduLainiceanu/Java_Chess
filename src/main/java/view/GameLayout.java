@@ -12,9 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import controller.GameController;
 import model.GameModel;
-import model.Tile;
 
 public class GameLayout extends MainLayout {
 

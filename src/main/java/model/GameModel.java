@@ -1,14 +1,7 @@
 package model;
 
-import controller.GameController;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
-import javafx.scene.Group;
-import javafx.scene.control.Control;
-import javafx.scene.layout.*;
 import model.pieces.*;
-import view.GameLayout;
-import view.MainLayout;
+import view.Tile;
 
 /*
 Clasa responsabila pentru stocarea datelor.
