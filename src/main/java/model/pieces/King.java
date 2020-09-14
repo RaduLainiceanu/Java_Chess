@@ -19,8 +19,4 @@ public class King extends Piece {
             pieceName = "Black King";
         }
     }
-
-
-
-
 }
