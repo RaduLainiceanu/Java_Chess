@@ -1,7 +1,7 @@
 package model.pieces;
 //An abstract class to represent common functionality of all chess model.pieces:
 
-import view.Tile;
+import model.GameModel;
 
 public abstract class Piece {
 
@@ -17,7 +17,7 @@ public abstract class Piece {
         this.imgUrl = imgUrl;
     }
 
-    public Piece(boolean white, Tile tile) {
+    public Piece(boolean white, GameModel.Tile tile) {
         this.white = white;
     }
 

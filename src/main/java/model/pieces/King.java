@@ -2,10 +2,10 @@ package model.pieces;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import view.Tile;
+import model.GameModel;
 
 public class King extends Piece {
-    public King(boolean white, Tile tile) {
+    public King(boolean white, GameModel.Tile tile) {
         super(white, tile);
         if(white){
             setImgUrl("white_king.png");

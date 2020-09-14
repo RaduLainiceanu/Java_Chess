@@ -2,10 +2,10 @@ package model.pieces;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import view.Tile;
+import model.GameModel;
 
 public class Tower extends Piece {
-    public Tower(boolean white,  Tile tile) {
+    public Tower(boolean white,  GameModel.Tile tile) {
         super(white, tile);
         if(white){
             setImgUrl("white_rook.png");

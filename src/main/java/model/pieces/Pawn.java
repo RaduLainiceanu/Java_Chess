@@ -2,11 +2,11 @@ package model.pieces;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import view.Tile;
+import model.GameModel;
 
 public class Pawn extends Piece {
 
-    public Pawn(boolean white, Tile tile) {
+    public Pawn(boolean white, GameModel.Tile tile) {
         super(white, tile);
         if(white){
             setImgUrl("white_pawn.png");

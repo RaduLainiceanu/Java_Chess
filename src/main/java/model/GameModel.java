@@ -1,5 +1,6 @@
 package model;
 
+import controller.GameController;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
@@ -7,7 +8,6 @@ import javafx.scene.control.Control;
 import javafx.scene.layout.*;
 import model.pieces.*;
 import view.MainLayout;
-import view.Tile;
 
 /*
 Clasa responsabila pentru stocarea datelor din joc si urmarirea pieselor selectate.
@@ -68,7 +68,7 @@ public class GameModel {
         gridPane.getStylesheets().add("style.css");
     }
 
-    public static void addPieces(int x, int y, Tile tile){
+    public static void addPieces(int x, int y, GameModel.Tile tile){
         if(x==0 && y==0){
             Tower blackTower = new Tower(false, tile);
             tile.setPiece(blackTower);
@@ -127,4 +127,30 @@ public class GameModel {
     }
 
     private GameModel(){}
+
+    /*
+     *   Aceasta clasa este un element vizual folosit in GameLayout pentru a reprezenta celulele de pe tabla.
+     * Ea este folosit ca principalul element al interactiunii utilizatorului cu logica din spate a aplicatiei.
+     * La apasarea click asupra unui element Tile, aplicatia face legatura cu metodele din clasa GameController.
+     * */
+    public static class Tile extends Pane {
+        private int posX;
+        private int posY;
+        private Piece piece;
+
+        public void setPiece(Piece piece) {
+            this.piece = piece;
+        }
+        public Piece getPiece() {
+            return piece;
+        }
+
+        public Tile(int x, int y) {
+            posX = x;
+            posY = y;
+            setOnMouseClicked(e -> {
+                GameController.selectAndMovePiece(x, y, this.piece, this);
+            });
+        }
+    }
 }

@@ -3,7 +3,6 @@ package controller;
 import model.GameModel;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import view.Tile;
 import model.pieces.*;
 
 /*
@@ -13,8 +12,8 @@ import model.pieces.*;
 * */
 public class GameController {
 
-    public static void selectAndMovePiece(int x, int y, Piece piece, Tile tile){
-        System.out.print(x + " " + y + " ");
+    public static void selectAndMovePiece(int x, int y, Piece piece, GameModel.Tile tile){
+        System.out.print(x + " " + y + " "+GameModel.getSelectedPiece());
         try{
             piece.sayType();
         }catch(Exception ignored){
@@ -25,6 +24,7 @@ public class GameController {
                 GameModel.setSelectedPiece(piece);
                 GameModel.setIsSelected(true);
                 tile.getChildren().clear();
+                tile.setPiece(null);
             }else{
                 GameModel.setSelectedPiece(null);
             }
