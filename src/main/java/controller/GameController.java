@@ -13,7 +13,7 @@ import model.pieces.*;
 public class GameController {
 
     public static void selectAndMovePiece(int x, int y, Piece piece, GameModel.Tile tile){
-        System.out.print(x + " " + y + " "+GameModel.getSelectedPiece());
+        System.out.print(x + " " + y + " "+GameModel.getSelectedPiece() + " ");
         try{
             piece.sayType();
         }catch(Exception ignored){
@@ -25,8 +25,10 @@ public class GameController {
                 GameModel.setIsSelected(true);
                 tile.getChildren().clear();
                 tile.setPiece(null);
+                GameModel.setOldTileCoordinates(new int[]{x, y});
             }else{
                 GameModel.setSelectedPiece(null);
+                GameModel.setIsSelected(false);
             }
         }else{
             tile.setPiece(GameModel.getSelectedPiece());

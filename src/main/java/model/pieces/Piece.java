@@ -9,6 +9,7 @@ public abstract class Piece {
     private boolean white = false;
     protected String pieceName = "generic piece";
     private String imgUrl = "";
+    public int[][] movementRules = new int[][]{{1, 1}, {-1,-1}};
 
     public String getImgUrl() {
         return imgUrl;
@@ -23,6 +24,9 @@ public abstract class Piece {
 
     public void sayType(){
         System.out.println(this.pieceName);
+    }
+    public String getPieceName(){
+        return this.pieceName;
     }
 
     public boolean isWhite() {

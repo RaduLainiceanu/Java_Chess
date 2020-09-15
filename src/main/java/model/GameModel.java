@@ -17,6 +17,7 @@ public class GameModel {
 
     static GridPane gridPane = new GridPane();
     static private boolean isSelected = false;
+    static private int[] oldTileCoordinates = new int[2];
     static private Piece selectedPiece;
     public static boolean isIsSelected() {
         return isSelected;
@@ -32,6 +33,12 @@ public class GameModel {
     }
     public static GridPane getGridPane() {
         return gridPane;
+    }
+    public static int[] getOldTileCoordinates() {
+        return oldTileCoordinates;
+    }
+    public static void setOldTileCoordinates(int[] oldTileCoordinates) {
+        GameModel.oldTileCoordinates = oldTileCoordinates;
     }
 
     public static void makeTable(){
@@ -127,6 +134,7 @@ public class GameModel {
     }
 
     private GameModel(){}
+
 
     /*
      *   Aceasta clasa este folosita pentru a putea stoca cate o piesa in fiecare obiect generat pe tabla.

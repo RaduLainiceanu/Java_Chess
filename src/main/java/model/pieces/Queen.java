@@ -7,6 +7,7 @@ import model.GameModel;
 public class Queen extends Piece {
     public Queen(boolean white, GameModel.Tile tile) {
         super(white, tile);
+        movementRules = new int[][]{{1, 1}, {-1,-1}};
         if(white){
             setImgUrl("white_queen.png");
             Image pieceImg = new Image(getImgUrl());
