@@ -1,4 +1,4 @@
-import graphic.MainLayout;
+import view.MainLayout;
 import javafx.application.Application;
 
 
